@@ -22,7 +22,9 @@ Estrutura de pastas:
 
 ## Arquivos Java do Jogo
 
-> Coloque instruções sobre como acionar o jogo.  
+Para acionar o jogo, é necessário executar os arquivos binários a partir do root do pacote, passando como parâmetro na linha de comando o caminho do arquivo de entrada .csv.
+
+Um exemplo de uso é (a partir desse diretório): `java -cp bin/ mc322.lab06.AppMundoWumpus data/caverna1.csv`
 
 [Código fonte](src/mc322/lab06)
 
