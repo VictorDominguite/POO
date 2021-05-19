@@ -30,18 +30,20 @@ Um exemplo de uso é (a partir desse diretório): `java -cp bin/ mc322.lab06.App
 
 ## Destaques de Arquitetura
 
-> Nessa parte, devem ser apresentados trechos de código de destaque em que foram adotadas soluções que atendem um ou mais dos seis critérios de qualidade listados anteriormente. Por exemplo, pode ser dado destaque a uma solução encontrada pela equipe que permita fácil expansão caso novas classes de Componente sejam criadas.
-
-### `Título do Destaque`
-
-> Escolha recortes relevantes e/ou de destaque do seu código. O recorte de código deve ser curto (entre 5 a 10 linhas). Apresente um recorte (você pode usar reticências para remover partes menos importantes). Veja como foi usado o highlight de Java para o código.
+### `Notificações`
 
 ~~~java
-// Recorte do seu código
-public void algoInteressante(…) {
-   …
-   trechoInteressante = 100;
+public static void addNotificacao(String s) {
+	notificacoes[indice_notif] = s;
+	indice_notif += 1;
+}
+	
+private void lerNotificacoes() {
+	for(int i = 0; i < indice_notif; i++) 
+		println(notificacoes[i]);
+		
+	indice_notif = 0;
 }
 ~~~
 
-> Deve haver aqui um breve texto (máximo 10 linhas) descrevendo porque o recorte é um destaque.
+Com essas funções estáticas da classe `Controle`, nós podemos reunir em apenas um local a lógica por trás do display de informações (notificações) do jogo para o usuário. O poder desse design vem da facilidade de alterar o método de display dessas informações (por exemplo, caso implementassemos uma UI gráfica para o jogo), sem a necessidade de alterar outras partes do código. Assim, a parte responsável pelo display das informações fica separada da lógica do jogo em sí.
